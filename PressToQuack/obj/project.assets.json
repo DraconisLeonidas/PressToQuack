@@ -42,11 +42,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lsr44\\source\\repos\\PressToQuack\\PressToQuack\\PressToQuack.csproj",
+      "projectUniqueName": "C:\\Users\\lsr44\\source\\repos\\DraconisLeonidas\\PressToQuack\\PressToQuack\\PressToQuack.csproj",
       "projectName": "PressToQuack",
-      "projectPath": "C:\\Users\\lsr44\\source\\repos\\PressToQuack\\PressToQuack\\PressToQuack.csproj",
+      "projectPath": "C:\\Users\\lsr44\\source\\repos\\DraconisLeonidas\\PressToQuack\\PressToQuack\\PressToQuack.csproj",
       "packagesPath": "C:\\Users\\lsr44\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lsr44\\source\\repos\\PressToQuack\\PressToQuack\\obj\\",
+      "outputPath": "C:\\Users\\lsr44\\source\\repos\\DraconisLeonidas\\PressToQuack\\PressToQuack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lsr44\\AppData\\Roaming\\NuGet\\NuGet.Config",
