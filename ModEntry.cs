@@ -4,6 +4,7 @@ using StardewModdingAPI.Utilities;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using GenericModConfigMenu;
 
 //I just wanna make the farmer quack on command, because it's funny.
 
@@ -13,7 +14,7 @@ namespace PressToQuack
     {
         // Add config
         private ModConfig config;
-                
+
         public override void Entry(IModHelper helper)
         {
             // Read in config file and create if needed
@@ -29,7 +30,7 @@ namespace PressToQuack
             this.config = this.Helper.ReadConfig<ModConfig>(); */
         }
 
-        private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
+        private void SetUpConfig(object sender, GameLaunchedEventArgs e)
         {
             // get Generic Mod Config Menu's AUP (if installed)
             var configMenu = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
@@ -39,18 +40,18 @@ namespace PressToQuack
             // register mod
             configMenu.Register(
                 mod: this.ModManifest,
-                reset: () => this.Config = new ModConfig(),
-                save: () => this.Helper.WriteConfig(this.Config)
+                reset: () => this.config = new ModConfig(),
+                save: () => this.Helper.WriteConfig(this.config)
                 );
 
             // add config option
-            configMenu.AddKeybindList(
-                mod: this.ModManifest,
-                name: () => "Quack Button",
-                tooltip: () => "The button that makes you quack.",
-                getValue: () => this.Config.QuackButton,
-                setValue: value => this.config.ExampleCheckbox = value
-                );
+            configMenu.AddKeybind(
+              mod: this.ModManifest,
+              name: () => "Quack Button",
+              tooltip: () => "The button that makes you quack.",
+              getValue: () => this.config.QuackButton,
+              setValue: value => this.config.QuackButton = value
+              );
         }
 
         //When button is pressed while player is in game and not in a menu, Quack.
